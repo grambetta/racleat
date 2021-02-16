@@ -27,7 +27,7 @@ class DevicePolicy < ApplicationPolicy
     owner?
   end
 
-private
+  private
 
   def owner?
     record.user == user

@@ -66,6 +66,3 @@
 <% if policy(Device).create? %>
   <%= link_to "New device", new_device_path %>
 <% end %>
-  <% if policy(Device).edit? %>
-    <%= link_to "Update", edit_device_path(restaurant) %>
-<% end %>

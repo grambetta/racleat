@@ -1,10 +1,15 @@
 class DevicesController < ApplicationController
+
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
-    @devices = Device.all
+    @devices = policy_scope(Device)
   end
 
   def show
     @device = Device.find(params[:id])
+    authorize @device
+
   end
 
   def new
@@ -13,7 +18,7 @@ class DevicesController < ApplicationController
   end
 
   def create
-    @device = current_user.device.new(device_params)
+    @device = current_user.devices.new(device_params)
     authorize @device
     if @device.save
       redirect_to device_path(@device)
