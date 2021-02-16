@@ -1,13 +1,22 @@
-<h1>This is the index</h1>
+<h1>Appareils à raclettes </h1>
 
 <div class="container">
-  <div class="cards">
-    <% @devices.each do |cocktail| %>
-      <%= link_to device_path(device) do %>
-        <div class="cards-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/1600Xx900/?cheese);">
-          <p>device</p>
+  <ul class="articles">
+    <% @devices.each do |device| %>
+      <li> <%= link_to device_path(device) do %>
+        <div class="card-container">
+        <div class="card-product">
+          <img src="https://source.unsplash.com/500x500/?cheese" />
+          <div class="card-product-infos">
+            <%= device.name %>
+            <p>Description produit </p>
+            <p> <strong>Capacité</strong></p>
+          </div>
         </div>
+        </div>
+        </li>
       <% end %>
     <% end %>
-  </div>
+    </ul>
 </div>
+
