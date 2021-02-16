@@ -1,16 +1,33 @@
 // Specific CSS for your home-page
-.carousel-caption h2 {
+.carousel-caption h1 {
   font-family: 'Great Vibes', cursive;
 }
 
-.custom-carousel-text {
+.card-homepage h4{
+  font-family: 'Roboto', sans-serif;
+}
+
+.custom-carousel-main {
   position: absolute;
-  top: 50px;
+  top: 70px;
   left: 25px;
   text-align: left;
 }
 
-.search-bar {
+.custom-carousel-text {
+  position: absolute;
+  top: 60px;
+  left: 25px;
+  text-align: left;
+}
+
+.text-main {
+  border: dotted 1px lightgrey;
+  text-align: center;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
 }
 
 .btn {
