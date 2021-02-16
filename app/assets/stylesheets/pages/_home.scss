@@ -1,1 +1,24 @@
 // Specific CSS for your home-page
+.carousel-caption h2 {
+  font-family: 'Great Vibes', cursive;
+}
+
+.custom-carousel-text {
+  position: absolute;
+  top: 50px;
+  left: 25px;
+  text-align: left;
+}
+
+.search-bar {
+}
+
+.btn {
+  color: black;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: bolder;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  background-color: #F4F4F4;
+}
