@@ -1,6 +1,5 @@
 .device-cards {
 }
-
 .articles {
   list-style-type: none;
 }
@@ -13,6 +12,7 @@
   display: flex;
   align-items: center;
   margin-top: 30px;
+  border-bottom: 1px solid black;
 }
 
 .card-product img {
@@ -40,6 +40,19 @@
   padding: 16px;
 }
 
-.card-container {
-  border-bottom: 1px solid black;
+.devices-and-map {
+  display: flex;
+}
+
+.map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  margin-top: 30px;
+  padding-left: 15px;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 12px;
 }
