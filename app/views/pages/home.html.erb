@@ -71,3 +71,7 @@
     </div>
   </div>
 </div>
+
+<% if policy(Device).create? %>
+  <%= link_to "New device", new_device_path %>
+<% end %>

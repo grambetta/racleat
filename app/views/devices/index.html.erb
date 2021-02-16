@@ -1,13 +1,27 @@
-<h1>This is the index</h1>
 
-<div class="container">
-  <div class="cards">
-    <% @devices.each do |device| %>
-      <%= link_to device_path(device) do %>
-        <div class="cards-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/1600Xx900/?cheese);">
-          <p>device</p>
-        </div>
+<div class="devices-and-map">
+  <div class="devices">
+    <h1>Appareils à raclettes </h1>
+    <ul class="articles">
+      <% @devices.each do |device| %>
+        <li> <%= link_to device_path(device) do %>
+          <div class="card-product">
+            <img src="https://source.unsplash.com/500x500/?cheese" />
+            <div class="card-product-infos">
+              <%= device.name %>
+              <p> <strong> <%= device.capacity %> </strong> personnes </p>
+              <p> <%= device.brand %> </p>
+              <p> <%= device.device_type %> </p>
+              <p> <%= device.price %>€ </p>
+            </div>
+          </div>
+        </li>
       <% end %>
     <% end %>
+    </ul>
+  </div>
+  <div class="map">
+    <img id="map" src='https://raw.githubusercontent.com/lewagon/layouts-demo/gh-pages/images/mapbox.png'>
   </div>
 </div>
+

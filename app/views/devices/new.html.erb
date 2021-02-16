@@ -1,0 +1,10 @@
+<%= simple_form_for @device do |f| %>
+  <%= f.input :name %>
+  <%= f.input :device_type, collection: Device::DEVICE_TYPE %>
+  <%= f.input :brand %>
+  <%= f.input :capacity, input_html: { min: '0' } %>
+  <%= f.input :price, input_html: { min: '0' } %>
+  <%= f.input :address %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.submit %>
+<% end %>
