@@ -2,6 +2,7 @@ require 'faker'
 require 'net/http'
 require 'json'
 require 'date'
+require 'open-uri'
 
 # sets Faker with French values
 Faker::Config.locale = 'fr'
@@ -52,7 +53,7 @@ RANDOM_DURATION = [1, 2]
     device_type = DEVICES_TYPES.sample
     capacity = CAPACITIES.sample
     device_name = "Appareil #{device_type} pour #{capacity} personnes"
-    address = "#{STREET_NUMBERS.sample} #{streets.sample}"
+    address = "#{STREET_NUMBERS.sample} #{streets.sample} Paris"
     brand = BRANDS.sample
     price = PRICES.sample
     device = Device.new(
@@ -65,6 +66,8 @@ RANDOM_DURATION = [1, 2]
       user_id: user.id
       )
     device.save
+    file = URI.open('https://media.paruvendu.fr/image/appareil-raclette/WB16/6/3/WB166324881_1.jpeg')
+    device.photos.attach(io: file, filename: 'raclette.jpeg', content_type: 'image/png')
     puts "#{device_name} is now available !"
   end
 end

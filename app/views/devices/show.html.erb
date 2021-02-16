@@ -1,6 +1,8 @@
 <div class="container">
 <h1><%= @device.name %></h1>
-<h2>insérer photos ici</h2>
+<% @device.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 <div class="device-owner">
 <h3>Loueur : <%=  @device.user.first_name %></h3>
 </div>
