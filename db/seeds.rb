@@ -59,6 +59,7 @@ BRANDS = ['Tefal', 'Moulinex', 'Proline', 'Electrolux']
       price: price,
       user_id: user.id
       )
+    device.save
   end
   puts "#{first_name} #{last_name} is now a Cheezer !"
 
