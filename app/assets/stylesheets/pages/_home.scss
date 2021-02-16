@@ -3,16 +3,20 @@
   font-family: 'Great Vibes', cursive;
 }
 
+.card-homepage h4{
+  font-family: 'Roboto', sans-serif;
+}
+
 .custom-carousel-main {
   position: absolute;
-  top: 50px;
+  top: 70px;
   left: 25px;
   text-align: left;
 }
 
 .custom-carousel-text {
   position: absolute;
-  top: 50px;
+  top: 60px;
   left: 25px;
   text-align: left;
 }
@@ -24,9 +28,6 @@
   padding: 10px;
   background-color: white;
   border-radius: 5px;
-}
-
-.search-bar {
 }
 
 .btn {
