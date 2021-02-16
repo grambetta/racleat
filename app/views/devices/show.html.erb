@@ -1,1 +1,12 @@
-<h1>This is the show</h1>
+<div class="container">
+<h1><%= @device.name %></h1>
+<h2>insérer photos ici</h2>
+<div class="device-owner">
+<h3>Loueur : <%=  @device.user.first_name %></h3>
+</div>
+<p><%= @device.brand %></p>
+<p><%= @device.capacity %></p>
+<p><%= @device.device_type %></p>
+<%= link_to 'Retour aux recherches', devices_path %> |
+
+</div>
