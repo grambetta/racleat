@@ -1,0 +1,6 @@
+<%= simple_form_for [@device, @reservation] do |f| %>
+  <%= f.input :start_date, as: :date %>
+  <%= f.input :end_date, as: :date %>
+  <p> reservation price : <%= @device.price %> € </p>
+  <%= f.submit %>
+<% end %>
