@@ -13,7 +13,7 @@ class DevicesController < ApplicationController
   end
 
   def create
-    @restaurant = current_user.restaurants.new(restaurant_params)
+    @device = current_user.device.new(device_params)
     authorize @device
     if @device.save
       redirect_to device_path(@device)
@@ -23,19 +23,20 @@ class DevicesController < ApplicationController
   end
 
   def edit
-    authorize @device
     @device = Device.find(params[:id])
+    authorize @device
   end
 
   def update
-    authorize @device
     @device = Device.find(params[:id])
+    authorize @device
     @device.update(device_params)
     redirect_to device_path(@device)
   end
 
   def destroy
     @device = device.find(params[:id])
+    authorize @device
     @device.destroy
     redirect_to devices_path
   end
