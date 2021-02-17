@@ -95,3 +95,52 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+// *** DASHBOARD PAGE ***
+
+.card-dashboard {
+  width: 300px;
+  border-radius: 3px;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid rgb(230,230,230);
+  box-shadow: 3px 3px 0px 0px rgb(194, 185, 182);
+  background: white;
+}
+
+
+.card-product-dashboard {
+  overflow: hidden;
+  height: 305px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.card-product-dashboard img {
+  height: 100%;
+  width: 300px;
+  object-fit: cover;
+}
+
+.card-product-dashboard h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product-dashboard p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+
+.card-product .card-product-dashboard-infos {
+  padding: 16px;
+}
