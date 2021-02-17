@@ -1,8 +1,54 @@
-h1 {
+.product-name {
   font-size: 28px;
   font-weight: 500;
+  text-align: left;
 }
 
-.device-owner {
 
+.product-description {
+margin-top: 10px;
+}
+
+.product-description p {
+  text-align: left;
+  font-weight: lighter;
+}
+
+.product-description h4 {
+font-size: 13px;
+font-weight: 400;
+}
+
+.product-and-reservation {
+  display: flex;
+  padding-top: 20px;
+}
+
+.reservations {
+  padding: 24px;
+  margin-left: 15px;
+  border: 1px solid rgba(200, 200, 200, .8);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+.product-name {
+  font-size: 22px;
+}
+
+.owner {
+  padding: 24px;
+  margin-left: 15px;
+  border: 1px solid rgba(200, 200, 200, .8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#owner-id {
+  font-weight: 600;
+}
+
+.reservations-container {
+  padding-top: 50px;
+  padding-left: 50px;
 }
