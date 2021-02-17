@@ -1,23 +1,32 @@
 <div class="container">
-  <h1><%= @device.name %></h1>
-  <% @device.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-  <div class="device-owner">
-    <h3>Loueur : <%=  @device.user.first_name %></h3>
-  </div>
-  <p><%= @device.brand %></p>
-  <p><%= @device.capacity %></p>
-  <p><%= @device.device_type %></p>
-
-  <div>
-    <%= simple_form_for [ @device, @reservation ] do |f| %>
-      Du <%= f.date_field :start_date %>
-      au <%= f.date_field :end_date %>
-
-      <%= f.submit "Réserver" %>
-    <% end %>
-  </div>
   <%= link_to 'Retour aux recherches', devices_path %>
-
+  <div class="product-and-reservation">
+    <div class="product-container">
+      <h1 class="product-name"><%= @device.name %></h1>
+      <% @device.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+      <div class="product-description">
+        <p>Marque : <%= @device.brand %></p>
+        <p>Convient pour : <%= @device.capacity %> personnes</p>
+        <p>Type : <%= @device.device_type %></p>
+        <h3><%= @device.price %> €</h3>
+      </div>
+    </div>
+      <div class="reservations-container">
+         <div class="reservations">
+          <h4>Réservez votre appareil</h4>
+        <%= simple_form_for [ @device, @reservation ] do |f| %>
+          Du <%= f.date_field :start_date %>
+          au <%= f.date_field :end_date %>
+          <%= f.submit "Réserver" %>
+        <% end %>
+       </div>
+       <div class="owner">
+        <p id="owner-id"><%= @device.user.first_name %></p>
+        <p>3 annonces</p>
+        <%=link_to "Contacter l'hôte", devices_path, class: "btn btn-outline-warning" %>
+       </div>
+    </div>
+  </div>
 </div>
