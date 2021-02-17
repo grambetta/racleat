@@ -1,15 +1,7 @@
 
 <div class="search-bar">
 <!--   Mettre dans cette div la searchbar
- -->  <form>
-              <div class="form-group">
-                <label for="address">Trouvez votre appareil</label>
-                <input type="address" id="your-address" placeholder="Votre addresse">
-              </div>
-              <div class="form-group">
-                <%=link_to "Say cheese!", devices_path, class: "btn btn-outline-warning" %>
-              </div>
-            </form
+ -->
 </div>
 <div class="devices-and-map">
   <div class="devices">
@@ -18,7 +10,7 @@
       <% @devices.each do |device| %>
         <li> <%= link_to device_path(device) do %>
           <div class="card-product">
-            <img src="https://source.unsplash.com/500x500/?cheese" />
+            <%= cl_image_tag device.photos.first.key %>
             <div class="card-product-infos">
               <%= device.name %>
               <p> <strong> <%= device.capacity %> </strong> personnes </p>
@@ -33,7 +25,10 @@
     </ul>
   </div>
   <div class="map">
-    <img id="map" src='https://raw.githubusercontent.com/lewagon/layouts-demo/gh-pages/images/mapbox.png'>
+    <div id="map"
+     style="width: 30vw; height: 100vh;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 </div>
 
