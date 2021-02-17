@@ -8,6 +8,7 @@ class DevicesController < ApplicationController
 
   def show
     @device = Device.find(params[:id])
+    @reservation = Reservation.new
     authorize @device
 
   end

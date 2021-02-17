@@ -1,14 +1,22 @@
 <div class="container">
-<h1><%= @device.name %></h1>
-<% @device.photos.each do |photo| %>
+  <h1><%= @device.name %></h1>
+  <% @device.photos.each do |photo| %>
   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-<div class="device-owner">
-<h3>Loueur : <%=  @device.user.first_name %></h3>
-</div>
-<p><%= @device.brand %></p>
-<p><%= @device.capacity %></p>
-<p><%= @device.device_type %></p>
-<%= link_to 'Retour aux recherches', devices_path %> |
+  <% end %>
+  <div class="device-owner">
+    <h3>Loueur : <%=  @device.user.first_name %></h3>
+  </div>
+  <p><%= @device.brand %></p>
+  <p><%= @device.capacity %></p>
+  <p><%= @device.device_type %></p>
+
+  <div>
+    <%= simple_form_for [ @device, @reservation ] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :start_date %>
+      <%= f.submit "Réserver" %>
+    <% end %>
+  </div>
+  <%= link_to 'Retour aux recherches', devices_path %>
 
 </div>
