@@ -6,8 +6,12 @@
   font-weight: bold;
 }
 
-.card-homepage h2 {
-  font-family: 'Roboto', sans-serif;
+h2 {
+  text-align: center;
+}
+
+h5 {
+  text-align: center;
 }
 
 p {
@@ -18,14 +22,18 @@ p {
   position: absolute;
   top: 70px;
   left: 25px;
-  text-align: left;
+  text-align: center;
+  font-size: 20px;
+  display: block !important;
 }
 
 .custom-carousel-text {
   position: absolute;
-  top: 60px;
+  top: 70px;
   left: 25px;
-  text-align: left;
+  text-align: center;
+  font-size: 20px;
+  display: block !important;
 }
 
 .text-main {
