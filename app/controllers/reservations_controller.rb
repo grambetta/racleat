@@ -11,7 +11,7 @@ class ReservationsController < ApplicationController
     @device = Device.find(params[:device_id])
     @reservation.device = @device
     @reservation.user = current_user
-    @reservation.total_price = @device.price
+    @reservation.total_price = @device.price * (@reservation.end_date - @reservation.start_date).to_i
     if @reservation.save
       redirect_to dashboard_path
     else
