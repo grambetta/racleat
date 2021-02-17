@@ -1,7 +1,19 @@
 
+<div class="search-bar">
+<!--   Mettre dans cette div la searchbar
+ -->  <form>
+              <div class="form-group">
+                <label for="address">Trouvez votre appareil</label>
+                <input type="address" id="your-address" placeholder="Votre addresse">
+              </div>
+              <div class="form-group">
+                <%=link_to "Say cheese!", devices_path, class: "btn btn-outline-warning" %>
+              </div>
+            </form
+</div>
 <div class="devices-and-map">
   <div class="devices">
-    <h1>Appareils à raclettes </h1>
+    <h1>Appareils à raclette </h1>
     <ul class="articles">
       <% @devices.each do |device| %>
         <li> <%= link_to device_path(device) do %>
