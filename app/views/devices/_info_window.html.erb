@@ -1,2 +1,6 @@
-<h2><%= device.name %></h2>
-<p><%= device.address %></p>
+
+<h2 ><%= link_to device.name, device_path(device) %></h2>
+<p><%= link_to cl_image_tag device.photos.first.key, height: 120, width: 160, crop: :fill %></p>
+
+
+
