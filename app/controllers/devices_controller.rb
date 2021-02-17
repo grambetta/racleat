@@ -4,13 +4,19 @@ class DevicesController < ApplicationController
 
   def index
     @devices = policy_scope(Device)
+    @markers = @devices.geocoded.map do |device|
+      {
+        lat: device.latitude,
+        lng: device.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { device: device })
+      }
+    end
   end
 
   def show
     @device = Device.find(params[:id])
     @reservation = Reservation.new
     authorize @device
-
   end
 
   def new
