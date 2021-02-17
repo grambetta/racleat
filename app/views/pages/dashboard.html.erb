@@ -1,6 +1,65 @@
-<h1> This is the dashboard</h1>
-<p> you can put here the user information</p>
-<p>Display the user reservations others raclette device</p>
-<p>Display the reservations for his raclette device if there is some</p>
-<p>for each reservation, add buttons to modify the reservation</p>
-<p> The user can only delete a reservation for his own raclette device that is booked by another user</p>
+<div class="container">
+
+  <h1> Hello <%= @user.first_name %> </h1>
+  <h2> Bienvenue sur votre tableau de bord 🧀</h2>
+<!--   <p> you can put here the user information</p>
+  <p>Display the user reservations others raclette device</p>
+  <p>Display the reservations for his raclette device if there is some</p>
+  <p>for each reservation, add buttons to modify the reservation</p>
+  <p> The user can only delete a reservation for his own raclette device that is booked by another user</p> -->
+
+  <div>
+    <!-- user information box (maybe use card )-->
+    <!-- maybe add avatar (same as navbar) -->
+    <h2> Vos informations </h2>
+    <p> Prénom : <%= @user.first_name %> </p>
+    <p> Nom : <%= @user.last_name %> </p>
+    <p> email: <%= @user.email %> </p>
+    <p> Membre Racleat depuis : <%= @user.created_at.strftime("%d-%m-%Y") %> </p>
+    <p> Nombre de réservations sur racleat : <%= @user.reservations.count %> </p>
+    <p> Nombre d'appareils en réservation sur Racleat : <%= @user.devices.count %></p>
+  </div>
+
+  <br>
+  <hr>
+  <br>
+
+  <!-- bookings list - use cards like the index -->
+  <div>
+    <div> <h2>Vos réservations </h2> </div>
+
+    <% @user.reservations.each do |reservation| %>
+    <div class="cards-homepage">
+      <h4> <%= reservation.device.name %> </h4>
+      <p> De <%= reservation.start_date.strftime("%d-%m-%Y") %> à <%= reservation.end_date.strftime("%d-%m-%Y") %> </p>
+      <p> Adresse de l'appareil: <%= reservation.device.address %> </p>
+      <p> Prix de la réservation : <%= reservation.total_price %> €</p>
+      <p> Capacité : <%= reservation.device.capacity %>  </p>
+      <p> Marque : <%= reservation.device.brand %> </p>
+      <p> Categorie : <%= reservation.device.device_type %> </p>
+      <%= link_to "voir l'appareil", device_path(reservation.device)  %>
+      <%= cl_image_tag reservation.device.photos.first.key, alt: "" %>
+    </div>
+    <% end %>
+  </div>
+
+<!-- list of user devices -->
+  <div>
+    <div> <h2> Vos appareils en location </h2> </div>
+    <% @user.devices.each do |device| %>
+    <div class="cards-homepage">
+      <h4> <%= device.name %> </h4>
+      <p> Disponible depuis : <%= device.created_at.strftime("%d-%m-%Y") %> </p>
+      <p> Adresse : <%= device.address %> </p>
+      <p> Prix journalier : <%= device.price %> €</p>
+      <p> Capacité : <%= device.capacity %>  </p>
+      <p> Marque : <%= device.brand %> </p>
+      <p> Categorie : <%= device.device_type %> </p>
+
+      <%= cl_image_tag device.photos.first.key, alt: "" %>
+    </div>
+    <% end %>
+
+  </div>
+
+</div>
