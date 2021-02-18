@@ -1,24 +1,27 @@
 
 <div class="margin-constraint">
   <div class="search-bar">
-<!--   Mettre dans cette div la searchbar
--->
+    <div class="input-group rounded">
+  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+    aria-describedby="search-addon" />
+  <span class="input-group-text border-0" id="search-addon">
+    <i class="fas fa-search"></i>
+  </span>
+</div>
   </div>
   <div class="devices-and-map row">
     <div class="devices col-8">
-      <h1>Les appareils à louer</h1>
+      <h1>Les <%= @devices.count %> appareils à louer</h1>
       <ul class="articles">
         <% @devices.each do |device| %>
         <li> <%= link_to device_path(device) do %>
           <div class="card-product">
             <%= cl_image_tag device.photos.first.key %>
             <div class="card-product-infos">
-              <%= device.name %>
-              <p> <strong> <%= device.capacity %> </strong> personnes </p>
-              <p> <%= device.brand %> </p>
-              <p> <%= device.device_type %> </p>
-              <p> <%= device.price %>€ </p>
+              <h2>Appareil <%= device.device_type %> <%= device.brand %></h2>
+              <p><%= device.capacity %> <i class="fas fa-users"></i></p>
             </div>
+            <h3 class="card-product-pricing"><%= device.price %>€</h3>
           </div>
         </li>
         <% end %>
