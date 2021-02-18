@@ -1,3 +1,4 @@
+<div class="form-container">
 <%= simple_form_for @device do |f| %>
   <%= f.input :name %>
   <%= f.input :device_type, collection: Device::DEVICE_TYPE %>
@@ -8,3 +9,4 @@
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit %>
 <% end %>
+</div>
