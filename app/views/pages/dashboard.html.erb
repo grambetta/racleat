@@ -1,27 +1,26 @@
 <div class="container">
-  <div class= "text-main">
-    <h1><strong>Hello <%= @user.first_name %>! </strong></h1>
-    <h4><em>Bienvenue sur votre tableau de bord 🧀</em></h4>
+  <div class="welcome">
+    <h4> <em>Hello</em> <%= @user.first_name %> <em>Bienvenue sur ton dashboard 🧀</em> </h4>
   </div>
-  <br>
+  <hr>
 <!--   <p> you can put here the user information</p>
   <p>Display the user reservations others raclette device</p>
   <p>Display the reservations for his raclette device if there is some</p>
   <p>for each reservation, add buttons to modify the reservation</p>
   <p> The user can only delete a reservation for his own raclette device that is booked by another user</p> -->
-<div class="cards-main">
+<div class="info-card-main">
   <div class="card-dashboard">
     <!-- user information box (maybe use card )-->
     <!-- maybe add avatar (same as navbar) -->
     <h5> <strong> Vos informations</strong> </h5>
     <p> Prénom : <%= @user.first_name %> </p>
     <p> Nom : <%= @user.last_name %> </p>
-    <p> email: <%= @user.email %> </p>
+    <p> Email: <%= @user.email %> </p>
   </div>
   <div class="card-dashboard">
     <h5> <strong> Vos réservations</strong> </h5>
-    <p> Nombre de réservations sur racleat : <%= @user.reservations.count %> </p>
-    <p> Nombre d'appareils en réservation sur Racleat : <%= @user.devices.count %></p>
+    <p> Réservations en cours : <%= @user.reservations.count %> </p>
+    <p> Appareils en réservation : <%= @user.devices.count %></p>
   </div>
 </div>
   <hr>
