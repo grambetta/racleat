@@ -36,30 +36,21 @@
   <!-- bookings list - use cards like the index -->
   <div class="card-main">
     <div> <h2>Vos réservations </h2> </div>
-
-    <% @user.reservations.each do |reservation| %>
-    <div class="card-product-dashboard">
-      <div class="card-product-dashboard-infos">
-        <ul>
-          <li>
+    <div class="cards-resa">
+        <% @user.reservations.each do |reservation| %>
+        <div class="card-product-dashboard">
+          <%= cl_image_tag reservation.device.photos.first.key, class: "img", alt: "" %>
+          <div class="card-product-dashboard-infos">
             <h4> <%= reservation.device.name %> </h4>
             <p> Du <%= reservation.start_date.strftime("%d-%m-%Y") %> au <%= reservation.end_date.strftime("%d-%m-%Y") %> </p>
-            <p> Adresse de l'appareil: <%= reservation.device.address %> </p>
-            <p> Prix de la réservation : <%= reservation.total_price %> €</p>
-            <p> Capacité : <%= reservation.device.capacity %>  </p>
-            <p> Marque : <%= reservation.device.brand %> </p>
-            <p> Categorie : <%= reservation.device.device_type %> </p>
+            <p> Adresse: <%= reservation.device.address %> </p>
+            <h3 class="dash-h3-pricing">  <%= reservation.total_price %> €</h3>
             <%= link_to "voir l'appareil", device_path(reservation.device)  %>
-          </li>
-        </ul>
-      </div>
-      <%= cl_image_tag reservation.device.photos.first.key, class: "img", alt: "" %>
-    </div>
-  <% end %>
-  <br>
-  <hr>
-  <br>
+          </div>
 
+        </div>
+      <% end %>
+    </div>
 
 <!-- list of user devices -->
   <div class="card-main">
