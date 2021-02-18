@@ -2,11 +2,11 @@
   <%= link_to 'Retour aux recherches', devices_path %>
   <div class="product-and-reservation">
     <div class="product-container">
-      <div class="card-product">
+      <div class="card-product-show">
         <% @device.photos.each do |photo| %>
         <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
         <% end %>
-          <div class="card-product-infos">
+          <div class="card-product-infos-show">
             <h2 class="product-name"><%= @device.name %></h2>
             <hr>
             <p><strong>Marque :</strong> <%= @device.brand %></p>
@@ -22,10 +22,12 @@
             </div>
         </div>
       </div>
-      <hr>
-      <p> <strong> Loueur : </strong><%= @device.user.first_name %></p>
-      <p> <strong> Addresse : </strong><%= @device.address%></p>
-      <p> <strong> Annonce créée  : </strong><%= @device.created_at%></p>
+      <div class="owner">
+        <hr>
+        <p> <strong> Loueur : </strong><%= @device.user.first_name %></p>
+        <p> <strong> Addresse : </strong><%= @device.address%></p>
+        <p> <strong> Annonce créée  : </strong><%= @device.created_at%></p>
+      </div>
 
     </div>
     <div class="reservations-container">
