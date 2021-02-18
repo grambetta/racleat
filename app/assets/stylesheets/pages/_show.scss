@@ -37,12 +37,7 @@
 }
 
 .owner {
-  padding: 24px;
-  margin-left: 15px;
-  border: 1px solid rgba(200, 200, 200, .8);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: left;
 }
 
 #owner-id {
@@ -54,7 +49,7 @@
   position: sticky;
 }
 
-.card-product {
+.card-product-show {
   overflow: hidden;
   height: 200px;
   background: white;
@@ -63,20 +58,20 @@
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0);
 }
 
-.card-product img {
+.card-product-show img {
   height: 100%;
   width: 200px;
   object-fit: cover;
   border-radius: 8px;
 }
 
-.card-product h2 {
+.card-product-show h2 {
   font-size: 18px;
   font-weight: bold;
   margin-top: 0px;
 }
 
-.card-product p {
+.card-product-show p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
@@ -85,11 +80,11 @@
   display: flex;
 }
 
-.card-product .card-product-infos {
+.card-product-show .card-product-infos-show {
   padding: 16px;
 }
 
-.btn {
+.btn-show {
   text-align: center;
 }
 
@@ -102,6 +97,7 @@
   display: flex;
   align-items: baseline;
 }
+
 body {
   background: white;
 }
