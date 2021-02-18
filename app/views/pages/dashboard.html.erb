@@ -1,27 +1,33 @@
 <div class="container">
-  <div class= "text-main">
-    <h1><strong>Hello <%= @user.first_name %>! </strong></h1>
-    <h4><em>Bienvenue sur votre tableau de bord 🧀</em></h4>
-  </div>
-  <br>
 <!--   <p> you can put here the user information</p>
   <p>Display the user reservations others raclette device</p>
   <p>Display the reservations for his raclette device if there is some</p>
   <p>for each reservation, add buttons to modify the reservation</p>
   <p> The user can only delete a reservation for his own raclette device that is booked by another user</p> -->
-<div class="cards-main">
+<div class="info-card-main">
   <div class="card-dashboard">
     <!-- user information box (maybe use card )-->
     <!-- maybe add avatar (same as navbar) -->
     <h5> <strong> Vos informations</strong> </h5>
-    <p> Prénom : <%= @user.first_name %> </p>
-    <p> Nom : <%= @user.last_name %> </p>
-    <p> email: <%= @user.email %> </p>
+      <div class="txt-dash-info">
+        <p> Prénom : <span> <%= @user.first_name %> </span></p>
+      </div>
+      <div class="txt-dash-info">
+        <p> Nom : <span> <%= @user.last_name %></span> </p>
+      </div>
+      <div class="txt-dash-info">
+        <p> Email: <span> <%= @user.email %> </span> </p>
+      </div>
   </div>
+
   <div class="card-dashboard">
     <h5> <strong> Vos réservations</strong> </h5>
-    <p> Nombre de réservations sur racleat : <%= @user.reservations.count %> </p>
-    <p> Nombre d'appareils en réservation sur Racleat : <%= @user.devices.count %></p>
+    <div class="txt-dash-resa">
+      <p> Réservations en cours : <span> <%= @user.reservations.count %> </span> </p>
+    </div>
+    <div class="txt-dash-resa">
+    <p> Appareils en réservation : <span> <%= @user.devices.count %> </span> </p>
+    </div>
   </div>
 </div>
   <hr>
@@ -37,7 +43,7 @@
         <ul>
           <li>
             <h4> <%= reservation.device.name %> </h4>
-            <p> De <%= reservation.start_date.strftime("%d-%m-%Y") %> à <%= reservation.end_date.strftime("%d-%m-%Y") %> </p>
+            <p> Du <%= reservation.start_date.strftime("%d-%m-%Y") %> au <%= reservation.end_date.strftime("%d-%m-%Y") %> </p>
             <p> Adresse de l'appareil: <%= reservation.device.address %> </p>
             <p> Prix de la réservation : <%= reservation.total_price %> €</p>
             <p> Capacité : <%= reservation.device.capacity %>  </p>
@@ -77,6 +83,7 @@
       </div>
     <% end %>
    </div>
+  </div>
 </div>
 <br>
 <br>

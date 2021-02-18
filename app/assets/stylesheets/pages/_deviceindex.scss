@@ -1,23 +1,50 @@
 .device-cards {
 }
 
-.articles {
-  list-style-type: none;
+.margin-constraint{
+    padding-left: 80px;
+    padding-right: 100px;
+    background-color: white;
 }
 
 .devices-and-map {
   display: flex;
 }
 
+.devices {
+  a {
+    text-decoration: none;
+  }
+}
+
+.articles {
+  list-style-type: none;
+  padding-left: 0;
+  column-count: 2;
+}
+
 .map {
   height: 100vh;
   position: sticky;
   top: 0;
-  margin-top: 30px;
-  padding-left: 15px;
+  margin-top: 96px;
+}
+
+.mapboxgl-popup-content {
+  h2 {
+    a {
+      text-decoration: none;
+    }
+  }
 }
 
 h1 {
   text-align: center;
-  padding-top: 12px;
+  padding-top: 24px;
+  padding-bottom: 16px;
+  font-family: 'Lato', sans-serif;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
 }
