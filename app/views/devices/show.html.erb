@@ -2,31 +2,41 @@
   <%= link_to 'Retour aux recherches', devices_path %>
   <div class="product-and-reservation">
     <div class="product-container">
-      <h1 class="product-name"><%= @device.name %></h1>
-      <% @device.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
-      <div class="product-description">
-        <p>Marque : <%= @device.brand %></p>
-        <p>Convient pour : <%= @device.capacity %> personnes</p>
-        <p>Type : <%= @device.device_type %></p>
-        <h3><%= @device.price %> €</h3>
-      </div>
-    </div>
-      <div class="reservations-container">
-         <div class="reservations">
-          <h4>Réservez votre appareil</h4>
-        <%= simple_form_for [ @device, @reservation ] do |f| %>
-          Du <%= f.date_field :start_date %>
-          au <%= f.date_field :end_date %>
-          <%= f.submit "Réserver" %>
+      <div class="card-product">
+        <% @device.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
         <% end %>
-       </div>
-       <div class="owner">
-        <p id="owner-id"><%= @device.user.first_name %></p>
-        <p>3 annonces</p>
-        <%=link_to "Contacter l'hôte", devices_path, class: "btn btn-outline-warning" %>
-       </div>
+          <div class="card-product-infos">
+            <h2 class="product-name"><%= @device.name %></h2>
+            <hr>
+            <p><strong>Marque :</strong> <%= @device.brand %></p>
+            <div class="capacity">
+             <p> <strong>Capacité : </strong><%=@device.capacity %> personnes</p>
+             <i class="fas fa-users"></i>
+            </div>
+            <div class="type">
+              <p><strong>Type :</strong> <%= @device.device_type %></p>
+            </div>
+            <div class="price">
+              <h3><%#= @device.price %></h3>
+            </div>
+        </div>
+      </div>
+      <hr>
+      <p> <strong> Loueur : </strong><%= @device.user.first_name %></p>
+      <p> <strong> Addresse : </strong><%= @device.address%></p>
+      <p> <strong> Annonce créée  : </strong><%= @device.created_at%></p>
+
+    </div>
+    <div class="reservations-container">
+     <div class="reservations text-center">
+      <h4>Réservez votre appareil</h4>
+    <%= simple_form_for [ @device, @reservation ] do |f| %>
+      <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.submit "Réserver", class: "btn btn-outline-warning" %>
+      <% end %>
+     </div>
     </div>
   </div>
 </div>
