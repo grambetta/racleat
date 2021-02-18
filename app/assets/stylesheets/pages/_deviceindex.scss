@@ -1,23 +1,52 @@
 .device-cards {
 }
 
-.articles {
-  list-style-type: none;
+.margin-constraint{
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .devices-and-map {
   display: flex;
 }
 
-.map {
+.devices {
+  // flex-grow: 1;
+  // flex-shrink: 1;
+  // flex-basis: 0;
+  a {
+    text-decoration: none;
+  }
+}
+
+#map {
   height: 100vh;
   position: sticky;
   top: 0;
-  margin-top: 30px;
-  padding-left: 15px;
 }
 
-h1 {
-  text-align: center;
-  padding-top: 12px;
+.articles {
+  list-style-type: none;
+  padding-left: 0;
 }
+
+.map {
+  // height: 100vh;
+  // position: sticky;
+  // top: 0;
+  margin-top: 78px;
+  // padding-left: 15px;
+}
+
+.mapboxgl-popup-content {
+  h2 {
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+// h1 {
+//   text-align: center;
+//   padding-top: 12px;
+// }

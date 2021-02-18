@@ -1,13 +1,14 @@
 
-<div class="search-bar">
+<div class="margin-constraint">
+  <div class="search-bar">
 <!--   Mettre dans cette div la searchbar
- -->
-</div>
-<div class="devices-and-map">
-  <div class="devices">
-    <h1>Appareils à raclette </h1>
-    <ul class="articles">
-      <% @devices.each do |device| %>
+-->
+  </div>
+  <div class="devices-and-map row">
+    <div class="devices col-8">
+      <h1>Les appareils à louer</h1>
+      <ul class="articles">
+        <% @devices.each do |device| %>
         <li> <%= link_to device_path(device) do %>
           <div class="card-product">
             <%= cl_image_tag device.photos.first.key %>
@@ -20,15 +21,16 @@
             </div>
           </div>
         </li>
-      <% end %>
-    <% end %>
-    </ul>
-  </div>
-  <div class="map">
-    <div id="map"
-     style="width: 30vw; height: 100vh;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        <% end %>
+        <% end %>
+      </ul>
+    </div>
+    <div class="map col-4">
+      <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      <!-- style="width: 40vw; height: 100vh;" -->
+    </div>
+    </div>
   </div>
 </div>
+
 
