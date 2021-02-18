@@ -25,6 +25,7 @@
       <div class="owner">
         <hr>
         <p> <strong> Loueur : </strong><%= @device.user.first_name %></p>
+        <p> <strong> Membre depuis le : </strong><%= @device.user.created_at %></p>
         <p> <strong> Addresse : </strong><%= @device.address%></p>
         <p> <strong> Annonce créée  : </strong><%= @device.created_at%></p>
       </div>
