@@ -11,25 +11,31 @@
             <hr>
             <p><strong>Marque :</strong> <%= @device.brand %></p>
             <div class="capacity">
-             <p> <strong>Capacité : </strong><%=@device.capacity %> personnes</p>
              <i class="fas fa-users"></i>
+             <p> <%=@device.capacity %> personnes</p>
             </div>
             <div class="type">
+              <i class="fas fa-bolt"></i>
               <p><strong>Type :</strong> <%= @device.device_type %></p>
-            </div>
-            <div class="price">
-              <h3><%#= @device.price %></h3>
             </div>
         </div>
       </div>
       <div class="owner">
         <hr>
-        <p> <strong> Loueur : </strong><%= @device.user.first_name %></p>
-        <p> <strong> Membre depuis le : </strong><%= @device.user.created_at %></p>
-        <p> <strong> Addresse : </strong><%= @device.address%></p>
+        <div class="user-show">
+        <i class="far fa-user"></i>
+        <p> <strong> Loueur : </strong><%= @device.user.first_name %> (<%=@device.user.reservations.count %>réservations)</p>
+        </div>
+  <!--       <p> <strong> Membre depuis le : </strong><%#= @device.user.created_at %></p> -->
+        <div class="address">
+          <i class="fas fa-map-marker-alt"></i>
+          <p> <strong> Addresse : </strong><%= @device.address%></p>
+        </div>
+        <div class="date">
+        <i class="far fa-calendar-alt"></i>
         <p> <strong> Annonce créée  : </strong><%= @device.created_at%></p>
+        </div>
       </div>
-
     </div>
     <div class="reservations-container">
      <div class="reservations text-center">

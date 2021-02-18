@@ -82,6 +82,11 @@
 
 .card-product-show .card-product-infos-show {
   padding: 16px;
+  font-size: 18px;
+}
+
+.card-product-show .card-product-infos-show p {
+font-size: 15px;
 }
 
 .btn-show {
@@ -98,6 +103,30 @@
   align-items: baseline;
 }
 
-body {
-  background: white;
+.address {
+  display: flex;
+  align-items: baseline;
+}
+
+.date {
+  display: flex;
+  align-items: baseline;
+}
+
+.user-show {
+  display: flex;
+  align-items: baseline;
+}
+
+.type {
+  display: flex;
+  align-items: baseline;
+}
+
+.fas {
+  margin-right: 6px;
+}
+
+.far {
+  margin-right: 6px;
 }
