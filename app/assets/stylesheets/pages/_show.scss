@@ -1,47 +1,43 @@
-.product-name {
-  font-size: 28px;
-  font-weight: 500;
-  text-align: left;
-}
+// .product-name {
+//   font-size: 28px;
+//   font-weight: 500;
+//   text-align: left;
+// }
 
+// .product-description {
+// margin-top: 10px;
+// }
 
-.product-description {
-margin-top: 10px;
-}
+// .product-description p {
+//   text-align: left;
+//   font-weight: lighter;
+// }
 
-.product-description p {
-  text-align: left;
-  font-weight: lighter;
-}
+// .product-description h4 {
+// font-size: 13px;
+// font-weight: 400;
+// }
 
-.product-description h4 {
-font-size: 13px;
-font-weight: 400;
+.product-container {
+  flex-grow: 1;
 }
 
 .product-and-reservation {
   display: flex;
   padding-top: 20px;
+  justify-content: space-between;
 }
 
 .reservations {
   padding: 24px;
   margin-left: 15px;
   border: 1px solid rgba(200, 200, 200, .8);
+  border-radius: 10px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
 }
 
-.product-name {
-  font-size: 22px;
-}
-
 .owner {
-  padding: 24px;
-  margin-left: 15px;
-  border: 1px solid rgba(200, 200, 200, .8);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: left;
 }
 
 #owner-id {
@@ -49,6 +45,88 @@ font-weight: 400;
 }
 
 .reservations-container {
-  padding-top: 50px;
   padding-left: 50px;
+  position: sticky;
+}
+
+.card-product-show {
+  overflow: hidden;
+  height: 200px;
+  background: white;
+  display: flex;
+  align-items: center;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0);
+}
+
+.card-product-show img {
+  height: 100%;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-product-show h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 0px;
+}
+
+.card-product-show p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  display: flex;
+}
+
+.card-product-show .card-product-infos-show {
+  padding: 16px;
+  font-size: 18px;
+}
+
+.card-product-show .card-product-infos-show p {
+font-size: 15px;
+}
+
+.btn-show {
+  text-align: center;
+}
+
+.capacity {
+  display: flex;
+  align-items: baseline;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+}
+
+.address {
+  display: flex;
+  align-items: baseline;
+}
+
+.date {
+  display: flex;
+  align-items: baseline;
+}
+
+.user-show {
+  display: flex;
+  align-items: baseline;
+}
+
+.type {
+  display: flex;
+  align-items: baseline;
+}
+
+.fas {
+  margin-right: 6px;
+}
+
+.far {
+  margin-right: 6px;
 }
