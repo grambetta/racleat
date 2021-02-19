@@ -1,11 +1,13 @@
 
 <div class="margin-constraint">
-  <div class="search-bar">
+  <br>
+  <br>
     <%= form_tag devices_path, method: :get do %>
-      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Trouvez votre appareil" %>
-      <%= submit_tag "Rechercher", class: "btn btn-primary" %>
-    <% end %>
-  </div>
+      <div style="display: flex">
+        <%= text_field_tag :query, params[:query], class: "form-control rounded", placeholder: "Trouvez votre appareil" %>
+        <%= submit_tag "Rechercher", class: "input-group-text border-0", id: "search-addon" %>
+      <% end %>
+    </div>
   <div class="devices-and-map row">
     <div class="devices col-8">
       <h1>Les <%= @devices.count %> appareils à louer</h1>
@@ -15,7 +17,8 @@
           <div class="card-product-index">
             <%= cl_image_tag device.photos.first.key %>
             <div>
-              <h2 class="card-product-index-title">Appareil <%= device.device_type %> <%= device.brand %></h2>
+              <h2 class="card-product-index-title">Appareil <%= device.device_type %></h2>
+                <h5><em><%= device.brand %></em></h5>
               <div class="card-product-index-infos">
                 <h3 class="card-product-index-capacity"><%= device.capacity %> <i class="fas fa-users"></i></h3>
                 <h3 class="card-product-index-pricing"><%= device.price %> €</h3>
