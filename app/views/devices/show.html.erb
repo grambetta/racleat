@@ -1,5 +1,5 @@
 <div class="container">
-  <%= link_to 'Retour aux recherches', devices_path %>
+  <%= link_to 'Retour aux recherches', devices_path, class: "button-search" %>
   <div class="product-and-reservation">
     <div class="product-container">
       <div class="card-product-show">
@@ -9,14 +9,14 @@
           <div class="card-product-infos-show">
             <h2 class="product-name"><%= @device.name %></h2>
             <hr>
-            <p><strong>Marque :</strong> <%= @device.brand %></p>
+            <p><strong><span>Marque :</span></strong><span style="margin-left: 5px;"> <%= @device.brand %></span></p>
             <div class="capacity">
              <i class="fas fa-users"></i>
              <p> <%=@device.capacity %> personnes</p>
             </div>
             <div class="type">
               <i class="fas fa-bolt"></i>
-              <p><strong>Type :</strong> <%= @device.device_type %></p>
+              <p><strong><span>Type :</span></strong><span style="margin-left: 5px;"> <%= @device.device_type %></span></p>
             </div>
         </div>
       </div>
@@ -24,16 +24,16 @@
         <hr>
         <div class="user-show">
         <i class="far fa-user"></i>
-        <p> <strong> Loueur : </strong><%= @device.user.first_name %> (<%=@device.user.reservations.count %>réservations)</p>
+        <p><strong><span>Loueur :</span></strong><span style="margin-left: 3px;"> <%= @device.user.first_name %></span style="margin-right: 3px;"></p>
+        <p><strong><span>(<%=@device.user.reservations.count%></span style="margin-left: 3px;"></strong><span style="margin-left: 3px;"> réservation)</span></p>
         </div>
-  <!--       <p> <strong> Membre depuis le : </strong><%#= @device.user.created_at %></p> -->
         <div class="address">
           <i class="fas fa-map-marker-alt"></i>
           <p> <strong> Addresse : </strong><%= @device.address%></p>
         </div>
         <div class="date">
         <i class="far fa-calendar-alt"></i>
-        <p> <strong> Annonce créée  : </strong><%= @device.created_at%></p>
+        <p> <strong> Annonce créée le : </strong><%= @device.created_at%></p>
         </div>
       </div>
     </div>
@@ -43,7 +43,7 @@
     <%= simple_form_for [ @device, @reservation ] do |f| %>
       <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.submit "Réserver", class: "btn btn-outline-warning" %>
+      <%= f.submit "Réserver", class: "reservation-button" %>
       <% end %>
      </div>
     </div>
