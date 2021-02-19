@@ -10,23 +10,25 @@
     <!-- maybe add avatar (same as navbar) -->
     <h5> <strong> Vos informations</strong> </h5>
       <div class="txt-dash-info">
-        <p> Prénom : <span> <%= @user.first_name %> </span></p>
+        <p> Prénom :  <span> <%= @user.first_name %> </span></p>
       </div>
       <div class="txt-dash-info">
-        <p> Nom : <span> <%= @user.last_name %></span> </p>
+        <p> Nom :  <span> <%= @user.last_name %></span> </p>
       </div>
       <div class="txt-dash-info">
-        <p> Email: <span> <%= @user.email %> </span> </p>
+        <p> Email:  <span> <%= @user.email %> </span> </p>
       </div>
   </div>
 
   <div class="card-dashboard">
     <h5> <strong> Vos réservations</strong> </h5>
     <div class="txt-dash-resa">
-      <p> Réservations en cours : <span> <%= @user.reservations.count %> </span> </p>
+      <p> Réservations en cours :  <span> <%= @user.reservations.count %> </span> </p>
     </div>
+    <br>
+    <br>
     <div class="txt-dash-resa">
-    <p> Appareils en réservation : <span> <%= @user.devices.count %> </span> </p>
+    <p> Appareils en réservation :  <span> <%= @user.devices.count %> </span> </p>
     </div>
   </div>
 </div>
@@ -34,63 +36,61 @@
   <br>
 
   <!-- bookings list - use cards like the index -->
-  <div class="card-main">
-  <ul class="list-inline tabs-underlined">
+
+    <ul class="list-inline tabs-underlined">
     <li>
-      <a href="#" class="tab-underlined active">Vos réservations</a>
+      <a href="#" class="tab-underlined active" id="btn-resa">Vos réservations</a>
      </li>
      <li>
-       <a href="#" class="tab-underlined">Vos appareils en location</a>
+       <a href="#" class="tab-underlined" id="btn-loc">Vos appareils en location</a>
     </li>
   </ul>
+
+  <div class="card-main" id="block-resa">
+
     <div class="cards-resa">
         <% @user.reservations.each do |reservation| %>
         <div class="card-product-dashboard">
           <%= cl_image_tag reservation.device.photos.first.key, class: "img", alt: "" %>
           <div class="card-product-dashboard-infos">
-            <div class=card-product-dashboard-content"> 
+            <div class="card-product-dashboard-content">
             <h4> <%= reservation.device.name %> </h4>
             <p> Du <%= reservation.start_date.strftime("%d-%m-%Y") %> au <%= reservation.end_date.strftime("%d-%m-%Y") %> </p>
             <p> Adresse: <%= reservation.device.address %> </p>
             </div>
             <div class=dash-card-foot>
             <h4 class="dash-h3-pricing">  <%= reservation.total_price %> €</h4>
-            <%= link_to "voir l'appareil", device_path(reservation.device) %>
+            <h4 class="card-product-dash-capacity"><%= reservation.device.capacity %> <i class="fas fa-users"></i></h4>
+            <%= link_to "voir l'appareil", device_path(reservation.device), class:"show-link" %>
             </div>
-            
-            
           </div>
-
         </div>
       <% end %>
     </div>
+  </div>
 
 <!-- list of user devices -->
-  <div class="card-main">
-    <div> <h2> Vos appareils en location </h2> </div>
+  <div class="card-main toggle-display" id="block-loc">
+    <div class="cards-loc">
       <% @user.devices.each do |device| %>
       <div class="card-product-dashboard">
-        <div class="card-product-dashboard-infos">
-          <ul>
-            <li>
-              <h4> <%= device.name %> </h4>
-              <p> Disponible depuis : <%= device.created_at.strftime("%d-%m-%Y") %> </p>
-              <p> Adresse : <%= device.address %> </p>
-              <p> Prix journalier : <%= device.price %> €</p>
-              <p> Capacité : <%= device.capacity %>  </p>
-              <p> Marque : <%= device.brand %> </p>
-              <p> Categorie : <%= device.device_type %> </p>
-            </li>
-          </ul>
-        </div>
         <%= cl_image_tag device.photos.first.key, class: "img", alt: "" %>
+        <div class="card-product-dashboard-infos">
+          <div class="card-product-dashboard-content">
+            <h4> <%= device.name %> </h4>
+            <p> Disponible depuis : <%= device.created_at.strftime("%d-%m-%Y") %> </p>
+
+            <p> Marque : <%= device.brand %> </p>
+          </div>
+          <div class=dash-card-foot>
+            <h4 class="dash-h3-pricing">  <%= device.price %> €</h4>
+            <h4 class="card-product-dash-capacity"><%= device.capacity %> <i class="fas fa-users"></i></h4>
+            <%= link_to "voir l'appareil", device_path(device), class:"show-link" %>
+          </div>
+        </div>
       </div>
-    <% end %>
-   </div>
+        <% end %>
+    </div>
   </div>
 </div>
-<br>
-<br>
-<hr>
-<br>
-<br>
+

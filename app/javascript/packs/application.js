@@ -29,11 +29,13 @@ import "../plugins/flatpickr";
 // import { initSelect2 } from '../components/init_select2';
 
 import { loadDynamicBannerText } from '../components/banner';
+import {selectTabs} from '../components/dash_tabs';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   // [...]
   loadDynamicBannerText();
+  selectTabs();
 });
 
 import { initMapbox } from '../plugins/init_mapbox';
