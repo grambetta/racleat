@@ -32,7 +32,7 @@ class DevicesController < ApplicationController
     @device = current_user.devices.new(device_params)
     authorize @device
     if @device.save
-      flash[:notice] = 'Votre réservation a bien été enregistrée'
+      flash[:notice] = 'Votre appareil a bien été ajouté'
       redirect_to device_path(@device)
     else
       render :new
