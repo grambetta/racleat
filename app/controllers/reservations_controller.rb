@@ -13,10 +13,10 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     @reservation.total_price = @device.price * (@reservation.end_date - @reservation.start_date).to_i
     if @reservation.save
-      # flash[:notice] = 'Votre réservation a bien été enregistrée'
+      flash[:notice] = 'Votre réservation a bien été enregistrée'
       redirect_to dashboard_path
     else
-      # flash[:notice] = 'Il y a une erreur, veuillez réessayer'
+      flash[:notice] = 'Il y a une erreur, veuillez réessayer'
       render :new
     end
   end
