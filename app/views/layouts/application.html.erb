@@ -12,10 +12,10 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" unless current_page?("controller"=>"devise/registrations", "action"=>"new")%>
+    <%= render "shared/navbar" unless current_page?("controller"=>"devise/sessions", "action"=>"new")%>
     <div class="content-wrapper">
     <%= yield %>
     </div>
-    <%= render "shared/footer" %>
+    <%= render "shared/footer"%>
   </body>
 </html>

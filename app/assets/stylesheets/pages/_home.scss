@@ -7,11 +7,10 @@ body {
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 265px 0;
   width: 100%;
   height: 100%;
   color: white;
-
 }
 
 
@@ -33,7 +32,7 @@ body {
 }
 
 .banner h4 {
-  font-size: 23px;
+  font-size: 20px;
   color: white;
   opacity: .8;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -47,14 +46,13 @@ body {
   border-radius: 12px;
   font-weight: bolder;
   font-size: 30px;
-  opacity: 0.8;
+  opacity: 1;
   transition: opacity 0.3s ease;
   background-color: #F4F4F4;
 }
 
 .btn:hover {
-  opacity: 1;
+  opacity: 0.8;
 }
-
 
 
