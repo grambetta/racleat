@@ -15,7 +15,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to dashboard_path
     else
-      render :new
+      render 'devices/show'
     end
   end
 
