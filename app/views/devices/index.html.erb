@@ -1,11 +1,13 @@
 
 <div class="margin-constraint">
+  <br>
+  <br>
   <div class="search-bar">
     <div class="input-group rounded">
       <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
       aria-describedby="search-addon" />
       <span class="input-group-text border-0" id="search-addon">
-        <i class="fas fa-search"></i>
+        <i class="fas fa-cheese"></i>
       </span>
     </div>
   </div>
@@ -18,7 +20,8 @@
           <div class="card-product-index">
             <%= cl_image_tag device.photos.first.key %>
             <div>
-              <h2 class="card-product-index-title">Appareil <%= device.device_type %> <%= device.brand %></h2>
+              <h2 class="card-product-index-title">Appareil <%= device.device_type %></h2>
+                <h5><em><%= device.brand %></em></h5>
               <div class="card-product-index-infos">
                 <h3 class="card-product-index-capacity"><%= device.capacity %> <i class="fas fa-users"></i></h3>
                 <h3 class="card-product-index-pricing"><%= device.price %> €</h3>
