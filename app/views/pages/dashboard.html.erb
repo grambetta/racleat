@@ -35,17 +35,30 @@
 
   <!-- bookings list - use cards like the index -->
   <div class="card-main">
-    <div> <h2>Vos réservations </h2> </div>
+  <ul class="list-inline tabs-underlined">
+    <li>
+      <a href="#" class="tab-underlined active">Vos réservations</a>
+     </li>
+     <li>
+       <a href="#" class="tab-underlined">Vos appareils en location</a>
+    </li>
+  </ul>
     <div class="cards-resa">
         <% @user.reservations.each do |reservation| %>
         <div class="card-product-dashboard">
           <%= cl_image_tag reservation.device.photos.first.key, class: "img", alt: "" %>
           <div class="card-product-dashboard-infos">
+            <div class=card-product-dashboard-content"> 
             <h4> <%= reservation.device.name %> </h4>
             <p> Du <%= reservation.start_date.strftime("%d-%m-%Y") %> au <%= reservation.end_date.strftime("%d-%m-%Y") %> </p>
             <p> Adresse: <%= reservation.device.address %> </p>
-            <h3 class="dash-h3-pricing">  <%= reservation.total_price %> €</h3>
-            <%= link_to "voir l'appareil", device_path(reservation.device)  %>
+            </div>
+            <div class=dash-card-foot>
+            <h4 class="dash-h3-pricing">  <%= reservation.total_price %> €</h4>
+            <%= link_to "voir l'appareil", device_path(reservation.device) %>
+            </div>
+            
+            
           </div>
 
         </div>
