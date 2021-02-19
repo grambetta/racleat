@@ -1,13 +1,10 @@
 
 <div class="margin-constraint">
   <div class="search-bar">
-    <div class="input-group rounded">
-      <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-      aria-describedby="search-addon" />
-      <span class="input-group-text border-0" id="search-addon">
-        <i class="fas fa-search"></i>
-      </span>
-    </div>
+    <%= form_tag devices_path, method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Trouvez votre appareil" %>
+      <%= submit_tag "Chercher", class: "btn btn-primary" %>
+    <% end %>
   </div>
   <div class="devices-and-map row">
     <div class="devices col-8">

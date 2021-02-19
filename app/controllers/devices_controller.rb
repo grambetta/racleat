@@ -3,7 +3,14 @@ class DevicesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @devices = policy_scope(Device)
+    if params[:query].present?
+      # int_query = (params[:query].gsub(/[^0-9]/, '')).to_i
+      # sql_query = "name @@ :query OR brand @@ :query OR capacity = :int_query OR device_type @@ :query"
+      # @devices = policy_scope(Device).where(sql_query, query: params[:query], int_query: int_query)
+      @devices = policy_scope(Device).search_by_all_fields(params[:query])
+    else
+      @devices = policy_scope(Device)
+    end
     @markers = @devices.geocoded.map do |device|
       {
         lat: device.latitude,
