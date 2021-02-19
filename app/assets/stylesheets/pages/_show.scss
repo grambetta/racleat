@@ -24,14 +24,14 @@
 
 .product-and-reservation {
   display: flex;
-  padding-top: 20px;
+  padding-top: 100px;
   justify-content: space-between;
 }
 
 .reservations {
   padding: 24px;
   margin-left: 15px;
-  border: 1px solid rgba(200, 200, 200, .8);
+  border: 1px solid rgba(255, 165, 0, .5);
   border-radius: 10px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
 }
@@ -66,7 +66,7 @@
 }
 
 .card-product-show h2 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   margin-top: 0px;
 }
@@ -86,7 +86,7 @@
 }
 
 .card-product-show .card-product-infos-show p {
-font-size: 15px;
+font-size: 18px;
 }
 
 .btn-show {
@@ -129,4 +129,51 @@ font-size: 15px;
 
 .far {
   margin-right: 6px;
+}
+
+.reservation-button {
+  color: black;
+  padding: 8px 100px;
+  border-radius: 12px;
+  font-weight: bolder;
+  font-size: 25px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  background-color: #F4F4F4;
+  border-color: #FFA500;
+  border: 1px solid #FFA500 !important;
+}
+
+.reservation-button:hover {
+  background-color: #FFA500;
+}
+
+.form-control[readonly] {
+  background-color: #E7E6E0;
+}
+
+a {
+  color: #FFA500;
+  padding-top: 8px;
+}
+
+.button-search {
+  color: black;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-weight: bolder;
+  font-size: 15px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  background-color: #F4F4F4;
+  border-color: #FFA500;
+  position: relative;
+  top: 20px;
+}
+
+.button-search:hover {
+  color: black;
+  background-color: rgb(255, 185, 0);
+  text-decoration: none;
+
 }
