@@ -15,9 +15,13 @@
 .txt-dash-resa {
   font-size: 14px;
   span {
-    font-weight: lighter;
-    color: grey;
-    font-style: italic;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 20%;
+    color: white;
+    text-align: center;
+    padding: 4px;
+    background-color: darkorange;
   }
 }
 .tabs-underlined {
@@ -38,4 +42,26 @@
 .tabs-underlined .tab-underlined.active {
   opacity: 1;
   border-bottom: 3px solid #555555;
+}
+
+.toggle-display {
+  display: none;
+}
+
+.show-link {
+    color: grey;
+    background-color: white;
+    opacity: .8;
+    padding: 4px 4px 4px 4px;
+    border: solid 1px #c5d7bd;
+    border-width: thin;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.show-link:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #c5d7bd;
+
 }
